@@ -1,9 +1,10 @@
 {
     "name": "tweakwise/magento2-attributelanding-tweakwise",
     "description": "Provides compatibility between Attribute landing module and Tweakwise module.",
+    "license": "OSL-3.0",
     "require": {
         "php": ">=7.4 <8.2",
-        "tweakwise/tweakwise": "^5.0",
+        "tweakwise/magento2-tweakwise": "^5.0",
         "tweakwise/magento2-attributelanding": "^4.0"
     },
     "type": "magento2-module",
