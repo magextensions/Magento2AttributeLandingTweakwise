@@ -3,7 +3,7 @@
     <module name="Tweakwise_AttributeLandingTweakwise" setup_version="1.0.0">
         <sequence>
             <module name="Tweakwise_AttributeLanding" />
-            <module name="Tweakwise_Tweakwise" />
+            <module name="Tweakwise_Magento2Tweakwise" />
         </sequence>
     </module>
 </config>
