@@ -5,10 +5,10 @@
  * @copyright : Copyright Emico B.V. 2020.
  */
 
-namespace Emico\AttributeLandingTweakwise\Model\Catalog\Layer\Url\RewriteResolver;
+namespace Tweakwise\AttributeLandingTweakwise\Model\Catalog\Layer\Url\RewriteResolver;
 
-use Emico\AttributeLanding\Model\Config;
-use Emico\Tweakwise\Model\Catalog\Layer\Url\RewriteResolver\RewriteResolverInterface;
+use Tweakwise\AttributeLanding\Model\Config;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Url\RewriteResolver\RewriteResolverInterface;
 use Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\Request\Http as MagentoHttpRequest;

@@ -4,16 +4,16 @@
  * @copyright (c) Emico B.V. 2017
  */
 
-namespace Emico\AttributeLandingTweakwise\Plugin;
+namespace Tweakwise\AttributeLandingTweakwise\Plugin;
 
 use Closure;
-use Emico\AttributeLanding\Model\Config;
-use Emico\AttributeLanding\Model\LandingPageContext;
-use Emico\AttributeLandingTweakwise\Model\FilterManager;
-use Emico\Tweakwise\Model\Catalog\Layer\Filter\Item;
-use Emico\Tweakwise\Model\Catalog\Layer\NavigationContext\CurrentContext;
-use Emico\Tweakwise\Model\Catalog\Layer\Url;
-use Emico\Tweakwise\Model\Client\Request\ProductSearchRequest;
+use Tweakwise\AttributeLanding\Model\Config;
+use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\NavigationContext\CurrentContext;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Url;
+use Tweakwise\Tweakwise\Model\Client\Request\ProductSearchRequest;
 use Magento\Catalog\Model\Layer;
 use Magento\Catalog\Model\Layer\Resolver;
 

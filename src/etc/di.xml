@@ -1,67 +1,67 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Emico\AttributeLanding\Model\FilterHider\FilterHiderInterface" type="Emico\AttributeLandingTweakwise\Model\FilterHider\TweakwiseFilterHider"/>
-    <type name="Emico\AttributeLanding\Model\FilterApplier\AggregateFilterApplier">
+    <preference for="Tweakwise\AttributeLanding\Model\FilterHider\FilterHiderInterface" type="Tweakwise\AttributeLandingTweakwise\Model\FilterHider\TweakwiseFilterHider"/>
+    <type name="Tweakwise\AttributeLanding\Model\FilterApplier\AggregateFilterApplier">
         <arguments>
             <argument name="appliers" xsi:type="array">
-                <item name="tweakwise" xsi:type="string">Emico\AttributeLandingTweakwise\Model\FilterApplier\TweakwiseFilterApplier</item>
+                <item name="tweakwise" xsi:type="string">Tweakwise\AttributeLandingTweakwise\Model\FilterApplier\TweakwiseFilterApplier</item>
             </argument>
         </arguments>
     </type>
-    <type name="Emico\AttributeLandingTweakwise\Model\FilterApplier\TweakwiseFilterApplier">
+    <type name="Tweakwise\AttributeLandingTweakwise\Model\FilterApplier\TweakwiseFilterApplier">
         <arguments>
-            <argument name="navigationContext" xsi:type="object">Emico\Tweakwise\Model\Catalog\Layer\NavigationContext\Category</argument>
+            <argument name="navigationContext" xsi:type="object">Tweakwise\Tweakwise\Model\Catalog\Layer\NavigationContext\Category</argument>
         </arguments>
     </type>
 
-    <virtualType name="Emico\AttributeLandingTweakwise\Model\NavigationConfig\LandingPage" type="Emico\Tweakwise\Model\NavigationConfig">
+    <virtualType name="Tweakwise\AttributeLandingTweakwise\Model\NavigationConfig\LandingPage" type="Tweakwise\Tweakwise\Model\NavigationConfig">
         <arguments>
-            <argument name="filterFormInputProvider" xsi:type="object">Emico\AttributeLandingTweakwise\Model\FilterFormInputProvider\LandingPageInputProvider</argument>
+            <argument name="filterFormInputProvider" xsi:type="object">Tweakwise\AttributeLandingTweakwise\Model\FilterFormInputProvider\LandingPageInputProvider</argument>
         </arguments>
     </virtualType>
 
     <!-- If you need other layouts or possible even layer objects register them here -->
-    <type name="Emico\Tweakwise\Controller\Ajax\Navigation">
+    <type name="Tweakwise\Tweakwise\Controller\Ajax\Navigation">
         <arguments>
             <argument name="initializerMap" xsi:type="array">
-                <item name="landingpage" xsi:type="object">Emico\AttributeLandingTweakwise\Model\AjaxResultInitializer\LandingPageInitializer</item>
+                <item name="landingpage" xsi:type="object">Tweakwise\AttributeLandingTweakwise\Model\AjaxResultInitializer\LandingPageInitializer</item>
             </argument>
         </arguments>
     </type>
 
-    <type name="Emico\Tweakwise\Model\Catalog\Layer\Url">
-        <plugin name="AttributeLandingTweakwise" type="Emico\AttributeLandingTweakwise\Plugin\UrlPlugin" />
+    <type name="Tweakwise\Tweakwise\Model\Catalog\Layer\Url">
+        <plugin name="AttributeLandingTweakwise" type="Tweakwise\AttributeLandingTweakwise\Plugin\UrlPlugin" />
     </type>
 
-    <type name="Emico\Tweakwise\Model\AjaxNavigationResult">
-        <plugin name="AttributeLandingTweakwise" type="Emico\AttributeLandingTweakwise\Plugin\Model\AjaxNavigationResultPlugin" />
+    <type name="Tweakwise\Tweakwise\Model\AjaxNavigationResult">
+        <plugin name="AttributeLandingTweakwise" type="Tweakwise\AttributeLandingTweakwise\Plugin\Model\AjaxNavigationResultPlugin" />
     </type>
 
-    <type name="Emico\Tweakwise\Model\Catalog\Layer\Url\Strategy\PathSlugStrategy">
-        <plugin name="AttributeLandingTweakwise" type="Emico\AttributeLandingTweakwise\Plugin\PathSlugStrategyPlugin" />
+    <type name="Tweakwise\Tweakwise\Model\Catalog\Layer\Url\Strategy\PathSlugStrategy">
+        <plugin name="AttributeLandingTweakwise" type="Tweakwise\AttributeLandingTweakwise\Plugin\PathSlugStrategyPlugin" />
         <arguments>
             <argument name="rewriteResolvers" xsi:type="array">
-                <item name="landingpage" xsi:type="object">Emico\AttributeLandingTweakwise\Model\Catalog\Layer\Url\RewriteResolver\LandingPageResolver</item>
+                <item name="landingpage" xsi:type="object">Tweakwise\AttributeLandingTweakwise\Model\Catalog\Layer\Url\RewriteResolver\LandingPageResolver</item>
             </argument>
         </arguments>
     </type>
 
-    <type name="Emico\Tweakwise\Model\Catalog\Layer\Url\Strategy\QueryParameterStrategy">
-        <plugin name="AttributeLandingTweakwise" type="Emico\AttributeLandingTweakwise\Plugin\QueryParameterStrategyPlugin"/>
+    <type name="Tweakwise\Tweakwise\Model\Catalog\Layer\Url\Strategy\QueryParameterStrategy">
+        <plugin name="AttributeLandingTweakwise" type="Tweakwise\AttributeLandingTweakwise\Plugin\QueryParameterStrategyPlugin"/>
     </type>
 
-    <type name="Emico\Tweakwise\Model\Seo\FilterHelper">
-        <plugin name="AttributeLandingTweakwise" type="Emico\AttributeLandingTweakwise\Plugin\Seo\FilterHelperPlugin" />
+    <type name="Tweakwise\Tweakwise\Model\Seo\FilterHelper">
+        <plugin name="AttributeLandingTweakwise" type="Tweakwise\AttributeLandingTweakwise\Plugin\Seo\FilterHelperPlugin" />
     </type>
 
-    <type name="Emico\Tweakwise\Block\LayeredNavigation\RenderLayered\DefaultRenderer">
+    <type name="Tweakwise\Tweakwise\Block\LayeredNavigation\RenderLayered\DefaultRenderer">
         <plugin name="AttributeLandingTweakwiseNoAjax"
-                type="Emico\AttributeLandingTweakwise\Plugin\Block\LayeredNavigation\RenderLayered\RendererPlugin"/>
+                type="Tweakwise\AttributeLandingTweakwise\Plugin\Block\LayeredNavigation\RenderLayered\RendererPlugin"/>
     </type>
 
-    <type name="Emico\Tweakwise\Block\LayeredNavigation\RenderLayered\SwatchRenderer">
+    <type name="Tweakwise\Tweakwise\Block\LayeredNavigation\RenderLayered\SwatchRenderer">
         <plugin name="AttributeLandingTweakwiseNoAjax"
-                type="Emico\AttributeLandingTweakwise\Plugin\Block\LayeredNavigation\RenderLayered\RendererPlugin"/>
+                type="Tweakwise\AttributeLandingTweakwise\Plugin\Block\LayeredNavigation\RenderLayered\RendererPlugin"/>
     </type>
 
 </config>

@@ -9,7 +9,7 @@
     <body>
         <referenceBlock name="catalog.leftnav">
             <arguments>
-                <argument name="tweakwise_navigation_config" xsi:type="object">Emico\AttributeLandingTweakwise\Model\NavigationConfig\LandingPage</argument>
+                <argument name="tweakwise_navigation_config" xsi:type="object">Tweakwise\AttributeLandingTweakwise\Model\NavigationConfig\LandingPage</argument>
             </arguments>
         </referenceBlock>
     </body>

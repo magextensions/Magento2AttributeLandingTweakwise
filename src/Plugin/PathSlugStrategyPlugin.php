@@ -4,14 +4,14 @@
  * @copyright (c) Emico B.V. 2017
  */
 
-namespace Emico\AttributeLandingTweakwise\Plugin;
+namespace Tweakwise\AttributeLandingTweakwise\Plugin;
 
 use Closure;
-use Emico\AttributeLanding\Model\LandingPageContext;
-use Emico\AttributeLandingTweakwise\Model\FilterManager;
-use Emico\Tweakwise\Model\Catalog\Layer\Filter\Item;
-use Emico\Tweakwise\Model\Catalog\Layer\Url\Strategy\PathSlugStrategy;
-use Emico\Tweakwise\Model\Catalog\Layer\UrlFactory;
+use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Url\Strategy\PathSlugStrategy;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\UrlFactory;
 use Magento\Framework\App\Request\Http as MagentoHttpRequest;
 
 class PathSlugStrategyPlugin

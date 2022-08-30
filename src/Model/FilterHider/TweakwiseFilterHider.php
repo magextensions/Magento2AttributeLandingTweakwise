@@ -4,13 +4,13 @@
  * @copyright (c) Emico B.V. 2017
  */
 
-namespace Emico\AttributeLandingTweakwise\Model\FilterHider;
+namespace Tweakwise\AttributeLandingTweakwise\Model\FilterHider;
 
-use Emico\AttributeLanding\Api\Data\FilterInterface as LandingPageFilterInterface;
-use Emico\AttributeLanding\Api\Data\LandingPageInterface;
-use Emico\AttributeLanding\Model\FilterHider\FilterHiderInterface;
-use Emico\Tweakwise\Model\Catalog\Layer\Filter as TweakwiseFilter;
-use Emico\Tweakwise\Model\Catalog\Layer\Filter\Item as TweakwiseFilterItem;
+use Tweakwise\AttributeLanding\Api\Data\FilterInterface as LandingPageFilterInterface;
+use Tweakwise\AttributeLanding\Api\Data\LandingPageInterface;
+use Tweakwise\AttributeLanding\Model\FilterHider\FilterHiderInterface;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter as TweakwiseFilter;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item as TweakwiseFilterItem;
 use Magento\Catalog\Model\Layer\Filter\FilterInterface;
 use Magento\Catalog\Model\Layer\Filter\Item;
 

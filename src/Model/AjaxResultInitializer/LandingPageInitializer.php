@@ -5,12 +5,12 @@
  * @copyright : Copyright Emico B.V. 2020.
  */
 
-namespace Emico\AttributeLandingTweakwise\Model\AjaxResultInitializer;
+namespace Tweakwise\AttributeLandingTweakwise\Model\AjaxResultInitializer;
 
-use Emico\AttributeLanding\Model\FilterApplier\FilterApplierInterface;
-use Emico\AttributeLanding\Model\LandingPageContext;
-use Emico\Tweakwise\Model\AjaxNavigationResult;
-use Emico\Tweakwise\Model\AjaxResultInitializer\InitializerInterface;
+use Tweakwise\AttributeLanding\Model\FilterApplier\FilterApplierInterface;
+use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Tweakwise\Tweakwise\Model\AjaxNavigationResult;
+use Tweakwise\Tweakwise\Model\AjaxResultInitializer\InitializerInterface;
 use Magento\Catalog\Api\CategoryRepositoryInterface;
 use Magento\Catalog\Model\Layer\Resolver;
 use Magento\Framework\App\RequestInterface;
@@ -18,7 +18,7 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Exception\NotFoundException;
 use Magento\Framework\Registry;
-use Emico\AttributeLanding\Api\LandingPageRepositoryInterface;
+use Tweakwise\AttributeLanding\Api\LandingPageRepositoryInterface;
 
 class LandingPageInitializer implements InitializerInterface
 {

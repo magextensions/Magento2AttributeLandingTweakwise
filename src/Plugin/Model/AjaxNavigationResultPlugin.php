@@ -1,13 +1,13 @@
 <?php
 
-namespace Emico\AttributeLandingTweakwise\Plugin\Model;
+namespace Tweakwise\AttributeLandingTweakwise\Plugin\Model;
 
-use Emico\AttributeLanding\Model\LandingPageContext;
-use Emico\AttributeLandingTweakwise\Model\FilterManager;
-use Emico\Tweakwise\Model\AjaxNavigationResult;
-use Emico\Tweakwise\Model\Catalog\Layer\Url;
-use Emico\Tweakwise\Model\Catalog\Layer\Url\UrlModel;
-use Emico\Tweakwise\Model\Catalog\Layer\Url\Strategy\PathSlugStrategy;
+use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
+use Tweakwise\Tweakwise\Model\AjaxNavigationResult;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Url;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Url\UrlModel;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Url\Strategy\PathSlugStrategy;
 use Magento\Framework\App\Request\Http as MagentoHttpRequest;
 
 class AjaxNavigationResultPlugin

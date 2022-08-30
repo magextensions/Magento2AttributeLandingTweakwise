@@ -4,12 +4,12 @@
  * @author : Edwin Jacobs, email: ejacobs@emico.nl.
  * @copyright : Copyright Emico B.V. 2020.
  */
-namespace Emico\AttributeLandingTweakwise\Model\FilterFormInputProvider;
+namespace Tweakwise\AttributeLandingTweakwise\Model\FilterFormInputProvider;
 
-use Emico\AttributeLanding\Api\Data\LandingPageInterface;
-use Emico\AttributeLanding\Model\LandingPageContext;
-use Emico\Tweakwise\Model\Config;
-use Emico\Tweakwise\Model\FilterFormInputProvider\FilterFormInputProviderInterface;
+use Tweakwise\AttributeLanding\Api\Data\LandingPageInterface;
+use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Tweakwise\Tweakwise\Model\Config;
+use Tweakwise\Tweakwise\Model\FilterFormInputProvider\FilterFormInputProviderInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Exception\NotFoundException;
 

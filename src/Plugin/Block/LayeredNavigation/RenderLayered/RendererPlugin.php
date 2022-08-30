@@ -1,14 +1,14 @@
 <?php
 
-namespace Emico\AttributeLandingTweakwise\Plugin\Block\LayeredNavigation\RenderLayered;
+namespace Tweakwise\AttributeLandingTweakwise\Plugin\Block\LayeredNavigation\RenderLayered;
 
-use Emico\AttributeLandingTweakwise\Model\FilterManager;
-use Emico\Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item;
 use Magento\Framework\View\Element\Template;
 
 /**
  * Class DefaultRendererPlugin
- * @package Emico\AttributeLandingTweakwise\Plugin\Block\LayeredNavigation\RenderLayered
+ * @package Tweakwise\AttributeLandingTweakwise\Plugin\Block\LayeredNavigation\RenderLayered
  */
 class RendererPlugin
 {

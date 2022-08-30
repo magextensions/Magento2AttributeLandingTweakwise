@@ -4,11 +4,11 @@
  * @copyright (c) Emico B.V. 2017
  */
 
-namespace Emico\AttributeLandingTweakwise\Model\FilterApplier;
+namespace Tweakwise\AttributeLandingTweakwise\Model\FilterApplier;
 
-use Emico\AttributeLanding\Api\Data\LandingPageInterface;
-use Emico\AttributeLanding\Model\FilterApplier\FilterApplierInterface;
-use Emico\Tweakwise\Model\Catalog\Layer\NavigationContext;
+use Tweakwise\AttributeLanding\Api\Data\LandingPageInterface;
+use Tweakwise\AttributeLanding\Model\FilterApplier\FilterApplierInterface;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\NavigationContext;
 
 class TweakwiseFilterApplier implements FilterApplierInterface
 {

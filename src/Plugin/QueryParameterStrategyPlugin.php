@@ -4,14 +4,14 @@
  * @author : Edwin Jacobs, email: ejacobs@emico.nl.
  * @copyright : Copyright Emico B.V. 2020.
  */
-namespace Emico\AttributeLandingTweakwise\Plugin;
+namespace Tweakwise\AttributeLandingTweakwise\Plugin;
 
-use Emico\AttributeLanding\Model\LandingPageContext;
-use Emico\AttributeLandingTweakwise\Model\FilterManager;
-use Emico\Tweakwise\Model\Catalog\Layer\Filter\Item;
-use Emico\Tweakwise\Model\Catalog\Layer\Url\Strategy\QueryParameterStrategy;
-use Emico\Tweakwise\Model\Catalog\Layer\Url\UrlModel;
-use Emico\Tweakwise\Model\Client\Type\FacetType\SettingsType;
+use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Url\Strategy\QueryParameterStrategy;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Url\UrlModel;
+use Tweakwise\Tweakwise\Model\Client\Type\FacetType\SettingsType;
 use Magento\Framework\App\Request\Http as MagentoHttpRequest;
 use Magento\Framework\Url;
 

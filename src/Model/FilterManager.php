@@ -4,16 +4,16 @@
  * @copyright (c) Emico B.V. 2017
  */
 
-namespace Emico\AttributeLandingTweakwise\Model;
+namespace Tweakwise\AttributeLandingTweakwise\Model;
 
-use Emico\AttributeLanding\Api\Data\FilterInterface;
-use Emico\AttributeLanding\Api\Data\LandingPageInterface;
-use Emico\AttributeLanding\Model\Filter;
-use Emico\AttributeLanding\Model\FilterHider\FilterHiderInterface;
-use Emico\AttributeLanding\Model\LandingPageContext;
-use Emico\AttributeLanding\Model\UrlFinder;
-use Emico\Tweakwise\Model\Catalog\Layer\Filter\Item;
-use Emico\Tweakwise\Model\Client\Type\FacetType\SettingsType;
+use Tweakwise\AttributeLanding\Api\Data\FilterInterface;
+use Tweakwise\AttributeLanding\Api\Data\LandingPageInterface;
+use Tweakwise\AttributeLanding\Model\Filter;
+use Tweakwise\AttributeLanding\Model\FilterHider\FilterHiderInterface;
+use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Tweakwise\AttributeLanding\Model\UrlFinder;
+use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\Tweakwise\Model\Client\Type\FacetType\SettingsType;
 use Magento\Catalog\Model\Layer;
 use Magento\Catalog\Model\Layer\Resolver;
 
