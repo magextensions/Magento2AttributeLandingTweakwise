@@ -10,10 +10,10 @@ use Closure;
 use Tweakwise\AttributeLanding\Model\Config;
 use Tweakwise\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\NavigationContext\CurrentContext;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Url;
-use Tweakwise\Tweakwise\Model\Client\Request\ProductSearchRequest;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\NavigationContext\CurrentContext;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url;
+use Tweakwise\Magento2Tweakwise\Model\Client\Request\ProductSearchRequest;
 use Magento\Catalog\Model\Layer;
 use Magento\Catalog\Model\Layer\Resolver;
 

@@ -3,7 +3,7 @@
 namespace Tweakwise\AttributeLandingTweakwise\Plugin\Block\LayeredNavigation\RenderLayered;
 
 use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter\Item;
 use Magento\Framework\View\Element\Template;
 
 /**

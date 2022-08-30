@@ -9,8 +9,8 @@ namespace Tweakwise\AttributeLandingTweakwise\Model\AjaxResultInitializer;
 
 use Tweakwise\AttributeLanding\Model\FilterApplier\FilterApplierInterface;
 use Tweakwise\AttributeLanding\Model\LandingPageContext;
-use Tweakwise\Tweakwise\Model\AjaxNavigationResult;
-use Tweakwise\Tweakwise\Model\AjaxResultInitializer\InitializerInterface;
+use Tweakwise\Magento2Tweakwise\Model\AjaxNavigationResult;
+use Tweakwise\Magento2Tweakwise\Model\AjaxResultInitializer\InitializerInterface;
 use Magento\Catalog\Api\CategoryRepositoryInterface;
 use Magento\Catalog\Model\Layer\Resolver;
 use Magento\Framework\App\RequestInterface;

@@ -9,8 +9,8 @@ namespace Tweakwise\AttributeLandingTweakwise\Model\FilterHider;
 use Tweakwise\AttributeLanding\Api\Data\FilterInterface as LandingPageFilterInterface;
 use Tweakwise\AttributeLanding\Api\Data\LandingPageInterface;
 use Tweakwise\AttributeLanding\Model\FilterHider\FilterHiderInterface;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter as TweakwiseFilter;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item as TweakwiseFilterItem;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter as TweakwiseFilter;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter\Item as TweakwiseFilterItem;
 use Magento\Catalog\Model\Layer\Filter\FilterInterface;
 use Magento\Catalog\Model\Layer\Filter\Item;
 

@@ -8,7 +8,7 @@ namespace Tweakwise\AttributeLandingTweakwise\Model\FilterApplier;
 
 use Tweakwise\AttributeLanding\Api\Data\LandingPageInterface;
 use Tweakwise\AttributeLanding\Model\FilterApplier\FilterApplierInterface;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\NavigationContext;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\NavigationContext;
 
 class TweakwiseFilterApplier implements FilterApplierInterface
 {

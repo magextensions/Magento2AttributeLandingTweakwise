@@ -8,8 +8,8 @@ namespace Tweakwise\AttributeLandingTweakwise\Plugin\Seo;
 
 use Tweakwise\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item;
-use Tweakwise\Tweakwise\Model\Seo\FilterHelper;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\Magento2Tweakwise\Model\Seo\FilterHelper;
 
 class FilterHelperPlugin
 {

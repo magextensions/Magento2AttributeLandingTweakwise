@@ -8,8 +8,8 @@ namespace Tweakwise\AttributeLandingTweakwise\Model\FilterFormInputProvider;
 
 use Tweakwise\AttributeLanding\Api\Data\LandingPageInterface;
 use Tweakwise\AttributeLanding\Model\LandingPageContext;
-use Tweakwise\Tweakwise\Model\Config;
-use Tweakwise\Tweakwise\Model\FilterFormInputProvider\FilterFormInputProviderInterface;
+use Tweakwise\Magento2Tweakwise\Model\Config;
+use Tweakwise\Magento2Tweakwise\Model\FilterFormInputProvider\FilterFormInputProviderInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Exception\NotFoundException;
 

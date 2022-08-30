@@ -9,9 +9,9 @@ namespace Tweakwise\AttributeLandingTweakwise\Plugin;
 use Closure;
 use Tweakwise\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Url\Strategy\PathSlugStrategy;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\UrlFactory;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url\Strategy\PathSlugStrategy;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\UrlFactory;
 use Magento\Framework\App\Request\Http as MagentoHttpRequest;
 
 class PathSlugStrategyPlugin

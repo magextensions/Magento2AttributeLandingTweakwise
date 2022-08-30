@@ -12,8 +12,8 @@ use Tweakwise\AttributeLanding\Model\Filter;
 use Tweakwise\AttributeLanding\Model\FilterHider\FilterHiderInterface;
 use Tweakwise\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\AttributeLanding\Model\UrlFinder;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item;
-use Tweakwise\Tweakwise\Model\Client\Type\FacetType\SettingsType;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\Magento2Tweakwise\Model\Client\Type\FacetType\SettingsType;
 use Magento\Catalog\Model\Layer;
 use Magento\Catalog\Model\Layer\Resolver;
 

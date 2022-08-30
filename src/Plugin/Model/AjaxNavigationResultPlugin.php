@@ -4,10 +4,10 @@ namespace Tweakwise\AttributeLandingTweakwise\Plugin\Model;
 
 use Tweakwise\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
-use Tweakwise\Tweakwise\Model\AjaxNavigationResult;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Url;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Url\UrlModel;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Url\Strategy\PathSlugStrategy;
+use Tweakwise\Magento2Tweakwise\Model\AjaxNavigationResult;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url\UrlModel;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url\Strategy\PathSlugStrategy;
 use Magento\Framework\App\Request\Http as MagentoHttpRequest;
 
 class AjaxNavigationResultPlugin

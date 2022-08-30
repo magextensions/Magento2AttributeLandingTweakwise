@@ -8,10 +8,10 @@ namespace Tweakwise\AttributeLandingTweakwise\Plugin;
 
 use Tweakwise\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Filter\Item;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Url\Strategy\QueryParameterStrategy;
-use Tweakwise\Tweakwise\Model\Catalog\Layer\Url\UrlModel;
-use Tweakwise\Tweakwise\Model\Client\Type\FacetType\SettingsType;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url\Strategy\QueryParameterStrategy;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url\UrlModel;
+use Tweakwise\Magento2Tweakwise\Model\Client\Type\FacetType\SettingsType;
 use Magento\Framework\App\Request\Http as MagentoHttpRequest;
 use Magento\Framework\Url;
 
