@@ -7,6 +7,9 @@
         "tweakwise/magento2-attributelanding": "^4.0"
     },
     "type": "magento2-module",
+    "replace": {
+        "emico/m2-attributelanding-tweakwise": "v2.4.0"
+    },
     "autoload": {
         "files": [
             "src/registration.php"
