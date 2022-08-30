@@ -1,6 +1,6 @@
 ## Description
 
-This is a compatibility module for [Magento2AttributeLanding](https://github.com/EmicoEcommerce/Magento2AttributeLanding) and [Magento2Tweakwise](https://github.com/EmicoEcommerce/Magento2Tweakwise).
+This is a compatibility module for [Magento2AttributeLanding](https://github.com/Tweakwise/Magento2AttributeLanding) and [Magento2Tweakwise](https://github.com/Tweakwise/Magento2Tweakwise).
 It will install the following packages: 
 1. tweakwise/tweakwise
 2. tweakwise/tweakwise-export
