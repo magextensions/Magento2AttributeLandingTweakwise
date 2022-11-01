@@ -6,8 +6,8 @@
 
 namespace Tweakwise\AttributeLandingTweakwise\Model\FilterApplier;
 
-use Tweakwise\AttributeLanding\Api\Data\LandingPageInterface;
-use Tweakwise\AttributeLanding\Model\FilterApplier\FilterApplierInterface;
+use Emico\AttributeLanding\Api\Data\LandingPageInterface;
+use Emico\AttributeLanding\Model\FilterApplier\FilterApplierInterface;
 use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\NavigationContext;
 
 class TweakwiseFilterApplier implements FilterApplierInterface

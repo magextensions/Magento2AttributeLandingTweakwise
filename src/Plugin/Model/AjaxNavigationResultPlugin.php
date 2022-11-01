@@ -2,7 +2,7 @@
 
 namespace Tweakwise\AttributeLandingTweakwise\Plugin\Model;
 
-use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Emico\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
 use Tweakwise\Magento2Tweakwise\Model\AjaxNavigationResult;
 use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url;

@@ -6,12 +6,12 @@
 
 namespace Tweakwise\AttributeLandingTweakwise\Model;
 
-use Tweakwise\AttributeLanding\Api\Data\FilterInterface;
-use Tweakwise\AttributeLanding\Api\Data\LandingPageInterface;
-use Tweakwise\AttributeLanding\Model\Filter;
-use Tweakwise\AttributeLanding\Model\FilterHider\FilterHiderInterface;
-use Tweakwise\AttributeLanding\Model\LandingPageContext;
-use Tweakwise\AttributeLanding\Model\UrlFinder;
+use Emico\AttributeLanding\Api\Data\FilterInterface;
+use Emico\AttributeLanding\Api\Data\LandingPageInterface;
+use Emico\AttributeLanding\Model\Filter;
+use Emico\AttributeLanding\Model\FilterHider\FilterHiderInterface;
+use Emico\AttributeLanding\Model\LandingPageContext;
+use Emico\AttributeLanding\Model\UrlFinder;
 use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter\Item;
 use Tweakwise\Magento2Tweakwise\Model\Client\Type\FacetType\SettingsType;
 use Magento\Catalog\Model\Layer;

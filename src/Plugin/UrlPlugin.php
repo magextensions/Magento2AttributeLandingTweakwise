@@ -7,8 +7,8 @@
 namespace Tweakwise\AttributeLandingTweakwise\Plugin;
 
 use Closure;
-use Tweakwise\AttributeLanding\Model\Config;
-use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Emico\AttributeLanding\Model\Config;
+use Emico\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
 use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter\Item;
 use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\NavigationContext\CurrentContext;

@@ -7,7 +7,7 @@
 
 namespace Tweakwise\AttributeLandingTweakwise\Model\Catalog\Layer\Url\RewriteResolver;
 
-use Tweakwise\AttributeLanding\Model\Config;
+use Emico\AttributeLanding\Model\Config;
 use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url\RewriteResolver\RewriteResolverInterface;
 use Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator;
 use Magento\Framework\App\Config\ScopeConfigInterface;
