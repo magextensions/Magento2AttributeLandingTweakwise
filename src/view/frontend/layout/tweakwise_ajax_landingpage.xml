@@ -14,7 +14,7 @@
         <container name="content"/>
         <container name="sidebar.main"/>
     </container>
-    <update handle="tweakwise_attributelanding_landingpage_view"/>
+    <update handle="emico_attributelanding_landingpage_view"/>
     <!-- Remove featured products from content as it would be rendered again in ajax call which is not needed -->
     <referenceBlock name="tweakwise.catalog.product.featured.before" remove="true"/>
 </layout>

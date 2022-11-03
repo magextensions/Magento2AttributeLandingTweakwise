@@ -6,7 +6,7 @@
  */
 namespace Tweakwise\AttributeLandingTweakwise\Plugin;
 
-use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Emico\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
 use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter\Item;
 use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url\Strategy\QueryParameterStrategy;

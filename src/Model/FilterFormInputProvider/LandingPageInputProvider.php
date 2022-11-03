@@ -6,8 +6,8 @@
  */
 namespace Tweakwise\AttributeLandingTweakwise\Model\FilterFormInputProvider;
 
-use Tweakwise\AttributeLanding\Api\Data\LandingPageInterface;
-use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Emico\AttributeLanding\Api\Data\LandingPageInterface;
+use Emico\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\Magento2Tweakwise\Model\Config;
 use Tweakwise\Magento2Tweakwise\Model\FilterFormInputProvider\FilterFormInputProviderInterface;
 use Magento\Framework\App\RequestInterface;

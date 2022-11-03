@@ -7,8 +7,8 @@
 
 namespace Tweakwise\AttributeLandingTweakwise\Model\AjaxResultInitializer;
 
-use Tweakwise\AttributeLanding\Model\FilterApplier\FilterApplierInterface;
-use Tweakwise\AttributeLanding\Model\LandingPageContext;
+use Emico\AttributeLanding\Model\FilterApplier\FilterApplierInterface;
+use Emico\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\Magento2Tweakwise\Model\AjaxNavigationResult;
 use Tweakwise\Magento2Tweakwise\Model\AjaxResultInitializer\InitializerInterface;
 use Magento\Catalog\Api\CategoryRepositoryInterface;
@@ -18,7 +18,7 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Exception\NotFoundException;
 use Magento\Framework\Registry;
-use Tweakwise\AttributeLanding\Api\LandingPageRepositoryInterface;
+use Emico\AttributeLanding\Api\LandingPageRepositoryInterface;
 
 class LandingPageInitializer implements InitializerInterface
 {
