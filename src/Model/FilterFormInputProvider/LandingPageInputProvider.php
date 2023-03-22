@@ -12,6 +12,7 @@ use Tweakwise\Magento2Tweakwise\Model\Config;
 use Tweakwise\Magento2Tweakwise\Model\FilterFormInputProvider\FilterFormInputProviderInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Exception\NotFoundException;
+use Tweakwise\Magento2Tweakwise\Model\FilterFormInputProvider\HashInputProvider;
 use Tweakwise\Magento2Tweakwise\Model\FilterFormInputProvider\ToolbarInputProvider;
 
 class LandingPageInputProvider implements FilterFormInputProviderInterface
@@ -39,6 +40,11 @@ class LandingPageInputProvider implements FilterFormInputProviderInterface
     protected ToolbarInputProvider $toolbarInputProvider;
 
     /**
+     * @var HashInputProvider $hashInputProvider
+     */
+    protected HashInputProvider $hashInputProvider;
+
+    /**
      * LandingPageProvider constructor.
      * @param Config $twConfig
      * @param LandingPageContext $landingPageContext
@@ -47,12 +53,14 @@ class LandingPageInputProvider implements FilterFormInputProviderInterface
         Config             $twConfig,
         LandingPageContext $landingPageContext,
         RequestInterface   $request,
-        ToolbarInputProvider $toolbarInputProvider
+        ToolbarInputProvider $toolbarInputProvider,
+        HashInputProvider $hashInputProvider
     ) {
         $this->twConfig = $twConfig;
         $this->landingPageContext = $landingPageContext;
         $this->request = $request;
         $this->toolbarInputProvider = $toolbarInputProvider;
+        $this->hashInputProvider = $hashInputProvider;
     }
 
     /**
@@ -72,17 +80,14 @@ class LandingPageInputProvider implements FilterFormInputProviderInterface
 
         $input = [
             '__tw_ajax_type' => self::TYPE,
-            '__tw_object_id' => $page->getPageId(),
+            '__tw_object_id' => (int)$page->getPageId(),
             '__tw_original_url' => $page->getUrlPath(),
         ];
 
-        $input['hash'] = $this->toolbarInputProvider->getHash($input);
+        $input['__tw_hash'] = $this->hashInputProvider->getHash($input);
 
-        return array_merge([
-            '__tw_ajax_type' => self::TYPE,
-            '__tw_object_id' => $page->getPageId(),
-            '__tw_original_url' => $page->getUrlPath(),
-            ],
+        return array_merge(
+            $input,
             $this->toolbarInputProvider->getFilterFormInput()
         );
     }
