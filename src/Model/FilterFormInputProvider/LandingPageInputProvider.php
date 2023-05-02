@@ -12,13 +12,15 @@ use Tweakwise\Magento2Tweakwise\Model\Config;
 use Tweakwise\Magento2Tweakwise\Model\FilterFormInputProvider\FilterFormInputProviderInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Exception\NotFoundException;
+use Tweakwise\Magento2Tweakwise\Model\FilterFormInputProvider\HashInputProvider;
+use Tweakwise\Magento2Tweakwise\Model\FilterFormInputProvider\ToolbarInputProvider;
 
 class LandingPageInputProvider implements FilterFormInputProviderInterface
 {
     public const TYPE = 'landingpage';
 
     /**
-     * @var Config
+     * @var Config $twConfig
      */
     protected $twConfig;
 
@@ -33,6 +35,16 @@ class LandingPageInputProvider implements FilterFormInputProviderInterface
     protected RequestInterface $request;
 
     /**
+     * @var ToolbarInputProvider $toolbarInputProvider
+     */
+    protected ToolbarInputProvider $toolbarInputProvider;
+
+    /**
+     * @var HashInputProvider $hashInputProvider
+     */
+    protected HashInputProvider $hashInputProvider;
+
+    /**
      * LandingPageProvider constructor.
      * @param Config $twConfig
      * @param LandingPageContext $landingPageContext
@@ -40,11 +52,15 @@ class LandingPageInputProvider implements FilterFormInputProviderInterface
     public function __construct(
         Config             $twConfig,
         LandingPageContext $landingPageContext,
-        RequestInterface   $request
+        RequestInterface   $request,
+        ToolbarInputProvider $toolbarInputProvider,
+        HashInputProvider $hashInputProvider
     ) {
         $this->twConfig = $twConfig;
         $this->landingPageContext = $landingPageContext;
         $this->request = $request;
+        $this->toolbarInputProvider = $toolbarInputProvider;
+        $this->hashInputProvider = $hashInputProvider;
     }
 
     /**
@@ -61,14 +77,19 @@ class LandingPageInputProvider implements FilterFormInputProviderInterface
         if (!$page) {
             throw new NotFoundException(__('landingpage not found'));
         }
-        return [
+
+        $input = [
             '__tw_ajax_type' => self::TYPE,
-            '__tw_object_id' => $page->getPageId(),
+            '__tw_object_id' => (int)$page->getPageId(),
             '__tw_original_url' => $page->getUrlPath(),
-            'product_list_order' => $this->request->getParam('product_list_order'),
-            'product_list_limit' => $this->request->getParam('product_list_limit'),
-            'product_list_mode' => $this->request->getParam('product_list_mode'),
         ];
+
+        $input['__tw_hash'] = $this->hashInputProvider->getHash($input);
+
+        return array_merge(
+            $input,
+            $this->toolbarInputProvider->getFilterFormInput()
+        );
     }
 
     /**
