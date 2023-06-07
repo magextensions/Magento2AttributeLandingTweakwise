@@ -14,6 +14,7 @@ use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Exception\NotFoundException;
 use Tweakwise\Magento2Tweakwise\Model\FilterFormInputProvider\HashInputProvider;
 use Tweakwise\Magento2Tweakwise\Model\FilterFormInputProvider\ToolbarInputProvider;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url;
 
 class LandingPageInputProvider implements FilterFormInputProviderInterface
 {
@@ -45,6 +46,11 @@ class LandingPageInputProvider implements FilterFormInputProviderInterface
     protected HashInputProvider $hashInputProvider;
 
     /**
+     * @var Url
+     */
+    protected $layerUrl;
+
+    /**
      * LandingPageProvider constructor.
      * @param Config $twConfig
      * @param LandingPageContext $landingPageContext
@@ -54,13 +60,15 @@ class LandingPageInputProvider implements FilterFormInputProviderInterface
         LandingPageContext $landingPageContext,
         RequestInterface   $request,
         ToolbarInputProvider $toolbarInputProvider,
-        HashInputProvider $hashInputProvider
+        HashInputProvider $hashInputProvider,
+        Url $layerUrl
     ) {
         $this->twConfig = $twConfig;
         $this->landingPageContext = $landingPageContext;
         $this->request = $request;
         $this->toolbarInputProvider = $toolbarInputProvider;
         $this->hashInputProvider = $hashInputProvider;
+        $this->layerUrl = $layerUrl;
     }
 
     /**
@@ -81,7 +89,7 @@ class LandingPageInputProvider implements FilterFormInputProviderInterface
         $input = [
             '__tw_ajax_type' => self::TYPE,
             '__tw_object_id' => (int)$page->getPageId(),
-            '__tw_original_url' => $page->getUrlPath(),
+            '__tw_original_url' => $this->getOriginalUrl(),
         ];
 
         $input['__tw_hash'] = $this->hashInputProvider->getHash($input);
@@ -98,5 +106,13 @@ class LandingPageInputProvider implements FilterFormInputProviderInterface
     protected function getPage(): LandingPageInterface
     {
         return $this->landingPageContext->getLandingPage();
+    }
+
+    /**
+     * @return string
+     */
+    public function getOriginalUrl() : string
+    {
+        return $this->layerUrl->getUrlStrategy()->getOriginalUrl($this->request);
     }
 }
