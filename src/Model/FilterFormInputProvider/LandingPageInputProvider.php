@@ -86,10 +86,13 @@ class LandingPageInputProvider implements FilterFormInputProviderInterface
             throw new NotFoundException(__('landingpage not found'));
         }
 
+        $url = $this->getOriginalUrl();
+        $url = strtok($url, '?');
+
         $input = [
             '__tw_ajax_type' => self::TYPE,
             '__tw_object_id' => (int)$page->getPageId(),
-            '__tw_original_url' => $this->getOriginalUrl(),
+            '__tw_original_url' => $url,
         ];
 
         $input['__tw_hash'] = $this->hashInputProvider->getHash($input);
