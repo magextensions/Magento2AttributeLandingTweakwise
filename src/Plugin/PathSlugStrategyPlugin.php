@@ -10,6 +10,7 @@ use Closure;
 use Emico\AttributeLanding\Model\LandingPageContext;
 use Tweakwise\AttributeLandingTweakwise\Model\FilterManager;
 use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Filter\Item;
+use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url\Strategy\FilterSlugManager;
 use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\Url\Strategy\PathSlugStrategy;
 use Tweakwise\Magento2Tweakwise\Model\Catalog\Layer\UrlFactory;
 use Magento\Framework\App\Request\Http as MagentoHttpRequest;
@@ -32,6 +33,11 @@ class PathSlugStrategyPlugin
     private $urlFactory;
 
     /**
+     * @var FilterSlugManager
+     */
+    private $filterSlugManager;
+
+    /**
      * @param LandingPageContext $landingPageContext
      * @param FilterManager $filterManager
      * @param UrlFactory $urlFactory
@@ -40,11 +46,13 @@ class PathSlugStrategyPlugin
     public function __construct(
         LandingPageContext $landingPageContext,
         FilterManager $filterManager,
-        UrlFactory $urlFactory
+        UrlFactory $urlFactory,
+        FilterSlugManager $filterSlugManager
     ) {
         $this->landingPageContext = $landingPageContext;
         $this->filterManager = $filterManager;
         $this->urlFactory = $urlFactory;
+        $this->filterSlugManager = $filterSlugManager;
     }
 
     /**
@@ -159,10 +167,15 @@ class PathSlugStrategyPlugin
             return $result;
         }
 
+        $lookupTable = $this->filterSlugManager->getLookupTable();
         $filters = [];
         foreach ($landingsPageFilters as $filter) {
             $filters[] = $filter->getFacet();
-            $filters[] = strtolower($filter->getValue());
+            if (!empty($lookupTable[$filter->getValue()])) {
+                $filters[] = $lookupTable[$filter->getValue()];
+            } else {
+                $filters[] = strtolower($filter->getValue());
+            }
         }
 
         return sprintf(
