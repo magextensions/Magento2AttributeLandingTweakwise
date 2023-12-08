@@ -15,36 +15,47 @@ define([
         },
 
         _initAttributes: function (name) {
-            var category_id = registery.get('emico_attributelanding_page_form.emico_attributelanding_page_form.general.category_id').value();
-            var selectAttribute =  $('select[name="' + name + '"]');
-            var inputAttribute = $('input[name="' + name.replace('[attribute-tmp]', '[attribute]') + '"]');
-            var inputValue = $('input[name="' + name.replace('[attribute-tmp]', '[value]') + '"]');
-            var selectedValue = inputAttribute.val();
-            var facetUrl = url.build('/tweakwise/ajax/facets/category/' + category_id);
-            var foundSelectedValue = false;
+            //bind to event. So it's not triggered by the user, but can be triggered in the code.
+            $('select[name="' + name + '"]').on('initAttributes', function(evt) {
+                var name = evt.target.name;
+                var category_id = registery.get('emico_attributelanding_page_form.emico_attributelanding_page_form.general.category_id').value();
+                var selectAttribute =  $('select[name="' + name + '"]');
+                var inputAttribute = $('input[name="' + name.replace('[attribute-tmp]', '[attribute]') + '"]');
+                var inputValue = $('input[name="' + name.replace('[attribute-tmp]', '[value]') + '"]');
+                var selectedValue = inputAttribute.val();
+                var templateValue = $('select[name="tweakwise_filter_template"]');
+                var facetUrl = url.build('/tweakwise/ajax/facets/category/' + category_id);
+                var foundSelectedValue = false;
 
-            inputAttribute.hide();
-            inputValue.hide();
-
-            $.getJSON(facetUrl, function( data ) {
-                selectAttribute.empty();
-                data.data.forEach(value => {
-                    if(value.value != selectedValue) {
-                        selectAttribute.append($("<option></option>").attr("value", value.value).text(value.label));
-                    } else {
-                        foundSelectedValue = true;
-                        selectAttribute.append($("<option></option>").attr("value", value.value).text(value.label).attr("selected", "selected"));
-                    }
-                });
-
-                if (foundSelectedValue === false && selectedValue) {
-                    selectAttribute.prepend($("<option></option>").attr("value", selectedValue).text(selectedValue + " (Invalid value)").attr("selected", "selected"));
-                } else {
-                    //no default value, set value to first option
-                    inputAttribute.val(selectAttribute.val());
+                if (templateValue.val() !== '') {
+                    facetUrl += '/filtertemplate/' + templateValue.val();
                 }
-                selectAttribute.trigger('change');
+
+                inputAttribute.hide();
+                inputValue.hide();
+
+                $.getJSON(facetUrl, function( data ) {
+                    selectAttribute.empty();
+                    data.data.forEach(value => {
+                        if(value.value != selectedValue) {
+                            selectAttribute.append($("<option></option>").attr("value", value.value).text(value.label));
+                        } else {
+                            foundSelectedValue = true;
+                            selectAttribute.append($("<option></option>").attr("value", value.value).text(value.label).attr("selected", "selected"));
+                        }
+                    });
+
+                    if (foundSelectedValue === false && selectedValue) {
+                        selectAttribute.val('tw_other');
+                    } else {
+                        //no default value, set value to first option
+                        inputAttribute.val(selectAttribute.val());
+                    }
+                    selectAttribute.trigger('change');
+                });
             });
+
+            $('select[name="' + name + '"]').trigger('initAttributes');
         },
 
         _bindEvents(name) {
@@ -55,18 +66,36 @@ define([
                 var inputValue = $('input[name="' + name.replace('[attribute-tmp]', '[value]') + '"]');
                 var inputAttribute = $('input[name="' + name.replace('[attribute-tmp]', '[attribute]') + '"]');
                 var selectValue = $('select[name="' + name.replace('[attribute-tmp]', '[value-tmp]') + '"]');
+                var templateValue = $('select[name="tweakwise_filter_template"]');
                 var facetUrl = url.build('/tweakwise/ajax/facetattributes/category/' + category_id + '/facetkey/' + facetValue);
                 var foundSelectedValue = false;
+
+                if (templateValue.val() !== '') {
+                    facetUrl += '/filtertemplate/' + templateValue.val();
+                }
 
                 //no value selected, load initial value
                 if (!facetValue) {
                     facetValue = inputAttribute.val();
                 }
 
-                inputAttribute.val(facetValue);
+                if (facetValue == 'tw_other') {
+                    inputAttribute.show();
+                    selectValue.val('tw_other');
+                    inputValue.show();
+                } else {
+                    inputAttribute.hide();
+                    if (selectValue.val() != 'tw_other') {
+                        inputValue.hide();
+                        inputAttribute.val(facetValue);
+                    } else {
+                        inputValue.show();
+                    }
+                }
+
                 inputAttribute.change();
 
-                $.getJSON(facetUrl, function( data ) {
+                $.getJSON(facetUrl, function (data) {
                     selectValue.empty();
                     data.data.forEach(value => {
                         if (value.value != inputValue.val()) {
@@ -78,13 +107,19 @@ define([
                     });
 
                     if (foundSelectedValue === false && inputValue.val()) {
-                        selectValue.prepend($("<option></option>").attr("value", inputValue.val()).text(inputValue.val() + " (Invalid value)").attr("selected", "selected"));
+                        selectValue.val('tw_other');
                     } else {
                         //no default value, set value to first option
                         inputValue.val(selectValue.val());
                         inputValue.change();
                     }
                 });
+            });
+
+            //select different filter template
+            $('select[name="tweakwise_filter_template"]').unbind('change');
+            $('select[name="tweakwise_filter_template"]').on('change', function(evt) {
+                $('select[name*="[attribute-tmp]"]').trigger('initAttributes');
             });
         }
     });
