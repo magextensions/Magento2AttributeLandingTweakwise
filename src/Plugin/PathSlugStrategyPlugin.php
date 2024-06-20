@@ -196,6 +196,11 @@ class PathSlugStrategyPlugin
      */
     public function afterGetOriginalUrl(PathSlugStrategy $original, string $result, MagentoHttpRequest $request): string
     {
-        return $result;
+        $landingPage = $this->landingPageContext->getLandingPage();
+        if ($landingPage === null) {
+            return $result;
+        }
+
+        return $this->urlFactory->create()->addBaseUrl($landingPage->getUrlPath());
     }
 }
