@@ -201,6 +201,10 @@ class PathSlugStrategyPlugin
             return $result;
         }
 
+        if (strpos($result, $landingPage->getUrlPath()) !== false) {
+            return $result;
+        }
+
         return $this->urlFactory->create()->addBaseUrl($landingPage->getUrlPath());
     }
 }
