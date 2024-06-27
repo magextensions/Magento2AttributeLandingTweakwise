@@ -205,6 +205,7 @@ class PathSlugStrategyPlugin
             return $result;
         }
 
-        return $this->urlFactory->create()->addBaseUrl($landingPage->getUrlPath());
+        return $landingPage->getUrlPath();
+
     }
 }
