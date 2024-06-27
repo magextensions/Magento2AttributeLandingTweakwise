@@ -206,6 +206,5 @@ class PathSlugStrategyPlugin
         }
 
         return $landingPage->getUrlPath();
-
     }
 }
