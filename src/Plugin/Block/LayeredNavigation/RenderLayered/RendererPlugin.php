@@ -20,7 +20,7 @@ class RendererPlugin
     /**
      * @var LandingPageContext
      */
-    protected readonly LandingPageContext $landingPageContext;
+    protected $landingPageContext;
 
     /**
      * DefaultRendererPlugin constructor.
