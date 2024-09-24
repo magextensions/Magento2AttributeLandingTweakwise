@@ -85,6 +85,7 @@ define([
                     inputValue.show();
                 } else {
                     inputAttribute.hide();
+                    selectValue.val(facetValue);
                     if (selectValue.val() != 'tw_other') {
                         inputValue.hide();
                         inputAttribute.val(facetValue);
