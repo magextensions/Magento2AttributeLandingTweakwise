@@ -58,7 +58,6 @@ class ListProduct extends TweakwiseListProduct
      * @param array $params
      * @return string
      */
-
     public function getUrl($route = '', $params = [], $queryParams = [])
     {
         if ($this->request->getModuleName() === 'emico_attributelanding') {
