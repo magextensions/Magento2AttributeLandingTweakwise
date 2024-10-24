@@ -64,7 +64,7 @@ class ListProduct extends TweakwiseListProduct
             $landingPageId = (int)$this->request->getParam('id');
             if (!empty($landingPageId)) {
                 $landingPage    = $this->landingPageRepository->getById($landingPageId);
-                $filters        = $this->registry->registry('tw_filters' . $landingPageId);
+                $filters        = $this->registry->registry('alp_filters' . $landingPageId);
                 $filterTemplate = $landingPage->getTweakwiseFilterTemplate();
                 $sortTemplate   = $landingPage->getTweakwiseSortTemplate();
 
