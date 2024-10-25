@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Emico\AttributeLanding\Model\FilterHider\FilterHiderInterface" type="Tweakwise\AttributeLandingTweakwise\Model\FilterHider\TweakwiseFilterHider"/>
-    <preference for="Tweakwise\Magento2Tweakwise\Block\Product\ListProduct" type="Tweakwise\AttributeLandingTweakwise\Block\Product\ListProduct"/>
     <type name="Emico\AttributeLanding\Model\FilterApplier\AggregateFilterApplier">
         <arguments>
             <argument name="appliers" xsi:type="array">
@@ -65,4 +64,8 @@
                 type="Tweakwise\AttributeLandingTweakwise\Plugin\Block\LayeredNavigation\RenderLayered\RendererPlugin"/>
     </type>
 
+    <type name="Tweakwise\Magento2Tweakwise\Block\Product\ListProduct">
+        <plugin name="Tweakwise_AttributeLandingTweakwise_Plugin_Block_Product_ListProduct"
+                type="Tweakwise\AttributeLandingTweakwise\Plugin\Block\Product\ListProduct"/>
+    </type>
 </config>
