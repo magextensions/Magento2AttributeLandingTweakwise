@@ -71,6 +71,9 @@ class ListProduct
         return [$route, $params];
     }
 
+    /**
+     * @return bool
+     */
     private function isAttributeLandingRequest(): bool
     {
         return $this->request->getModuleName() === 'emico_attributelanding';
