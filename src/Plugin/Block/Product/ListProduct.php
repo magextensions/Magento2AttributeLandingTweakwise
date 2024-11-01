@@ -8,7 +8,6 @@ use Emico\AttributeLanding\Api\LandingPageRepositoryInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Magento\Framework\Registry;
 use Tweakwise\Magento2Tweakwise\Block\Product\ListProduct as Subject;
 use Tweakwise\Magento2Tweakwise\Helper\Cache;
 
@@ -18,13 +17,11 @@ class ListProduct
      * @param RequestInterface $request
      * @param Cache $cacheHelper
      * @param LandingPageRepositoryInterface $landingPageRepository
-     * @param Registry $registry
      */
     public function __construct(
         private readonly RequestInterface $request,
         private readonly Cache $cacheHelper,
-        private readonly LandingPageRepositoryInterface $landingPageRepository,
-        private readonly Registry $registry
+        private readonly LandingPageRepositoryInterface $landingPageRepository
     ) {
     }
 
@@ -52,7 +49,7 @@ class ListProduct
             return [$route, $params];
         }
 
-        $filters = $this->registry->registry(sprintf('alp_filters_%s', $landingPageId)) ?? [];
+        $filters = $landingPage->getFilters();
         $filterTemplate = $landingPage->getTweakwiseFilterTemplate();
         $sortTemplate = $landingPage->getTweakwiseSortTemplate();
 
