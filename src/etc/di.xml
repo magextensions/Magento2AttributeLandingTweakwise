@@ -64,4 +64,8 @@
                 type="Tweakwise\AttributeLandingTweakwise\Plugin\Block\LayeredNavigation\RenderLayered\RendererPlugin"/>
     </type>
 
+    <type name="Tweakwise\Magento2Tweakwise\Block\Product\ListProduct">
+        <plugin name="Tweakwise_AttributeLandingTweakwise_Plugin_Block_Product_ListProduct"
+                type="Tweakwise\AttributeLandingTweakwise\Plugin\Block\Product\ListProduct"/>
+    </type>
 </config>
