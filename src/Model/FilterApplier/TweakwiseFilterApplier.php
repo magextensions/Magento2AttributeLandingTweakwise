@@ -50,6 +50,11 @@ class TweakwiseFilterApplier implements FilterApplierInterface
         if ($sortTemplateId) {
             $navigationRequest->setSortTemplateId($sortTemplateId);
         }
+
+        $builderTemplateId = $page->getTweakwiseBuilderTemplate();
+        if (!empty($builderTemplateId)) {
+            $navigationRequest->setBuilderTemplateId($builderTemplateId);
+        }
     }
 
     /**
