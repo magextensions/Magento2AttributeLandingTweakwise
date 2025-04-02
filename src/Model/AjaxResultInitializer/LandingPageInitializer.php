@@ -19,6 +19,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Exception\NotFoundException;
 use Magento\Framework\Registry;
 use Emico\AttributeLanding\Api\LandingPageRepositoryInterface;
+use Magento\Store\Model\StoreManagerInterface;
 
 class LandingPageInitializer implements InitializerInterface
 {
@@ -69,7 +70,8 @@ class LandingPageInitializer implements InitializerInterface
         LandingPageRepositoryInterface $landingPageRepository,
         CategoryRepositoryInterface $categoryRepository,
         FilterApplierInterface $filterApplier,
-        LandingPageContext $landingPageContext
+        LandingPageContext $landingPageContext,
+        private readonly StoreManagerInterface $storeManager,
     ) {
         $this->layerResolver = $layerResolver;
         $this->registry = $registry;
@@ -121,7 +123,8 @@ class LandingPageInitializer implements InitializerInterface
         }
 
         try {
-            $landingPage = $this->landingPageRepository->getById($pageId);
+            $storeId = $this->storeManager->getStore()->getId();
+            $landingPage = $this->landingPageRepository->getByIdWithStore($pageId, $storeId);
             if (!$landingPage->isActive()) {
                 throw new NotFoundException(__('Page not active'));
             }
